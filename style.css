@@ -1,5 +1,6 @@
 
 body{
+    background-color: rgb(223, 213, 223);
     font-size: 2rem;
     width: 800px;
     margin: 0 auto;
@@ -7,13 +8,15 @@ body{
     display:grid;
     grid-template:
     "... ...... ......  ...... ...... ...... ..."
-    "... header header  header header header ..." 150px
+    "... header header  ul     ul     ul     ..." 150px
     "... ...... ......  ...... ...... ...... ..." 10px
-    "... left   ......  center  ..... right  ..."  1fr
+    "... left   left    left   right  right  ..."  1fr
+    "... main   main    main   main   main   ..."  1fr
+    "... main2  main2   main2  main2  main2   ..." 1fr
     "... ...... ......  ...... ...... ...... ..." 10px
     "...footer footer  footer footer footer  ..." 300px
     "... ...... ......  ...... ...... ...... ..."
-    /auto 150px  10px 1fr   10px  200px auto; 
+    /auto 150px  40px   230px   40px  200px auto; 
     gap: 10px;
 
 }
@@ -21,16 +24,48 @@ header{
 grid-area: header;
 }
 
-main{
-grid-area: center;
+ul{
+    Grid-area: ul;
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    white-space:nowrap; 
+    
 }
+
+
 
 nav{
     grid-area: left;
+    
+}
+
+button{
+    font-size: 18px;
+    width: 410px;
+    cursor: pointer;
+    outline: none;
+    outline: none;
+    color: orange;
+    background-color: papayawhip;
+}
+
+button:hover{
+    transition: 1s ease-in-out;
+    background-color: white;
+    color: red;
 }
 
 aside{
     grid-area: right;
+}
+
+.main{
+    grid-area:main;
+}
+
+.main2{
+    grid-area:main2;
 }
 
 footer{
@@ -41,10 +76,53 @@ footer{
 body{
     grid-template: 
     "header" 150px
-    "center" 1fr 
+    "ul"
     "left  "
     "right "
+    "main"   
+    "main2"  
     "footer" 300px
     ;
 }
+
+header{
+    display: flex;
+    justify-content: center; 
+    width: 100px;
+
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+aside{
+    display: flex;
+    justify-content: center;  
+}
+
+.main{
+    display: flex;
+    justify-content: center;  
+    position: fix;
+}
+
+.main2{
+    display: flex;
+    justify-content: center;  
+    position: fixed;
+    
+}
+
+footer{
+    display: flex;
+    justify-content: center;  
+}
+
 }
